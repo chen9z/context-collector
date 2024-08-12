@@ -2,8 +2,9 @@ import argparse
 import fnmatch
 import os.path
 
-from default_ignores import DEFAULT_IGNORES
 from pathlib import Path
+
+from context_collector.default_ignores import DEFAULT_IGNORES
 
 
 def get_ignore_patterns(path: str):

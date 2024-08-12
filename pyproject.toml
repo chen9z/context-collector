@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Collect context for llm chat"
 authors = ["chen9z"]
 readme = "README.md"
+packages = [{ include = "context_collector" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -12,3 +13,6 @@ python = "^3.10"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+contc = "context_collector.app:main"
