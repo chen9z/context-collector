@@ -2,7 +2,6 @@ import argparse
 import fnmatch
 import os.path
 
-from config import Config
 from default_ignores import DEFAULT_IGNORES
 from pathlib import Path
 
@@ -26,9 +25,9 @@ def should_ignore(file_path: str, rel_path: str, ignore_patterns: list[str]):
     return any(fnmatch.fnmatch(rel_path, pattern) for pattern in ignore_patterns)
 
 
-def collect_context(path: str, output_file: str, user_includes: list[str], user_ignores: list[str]):
+def collect_context(path: str, output_file: str, user_ignores: list[str]):
     ignore_patterns = get_ignore_patterns(path)
-    # exclude the result file
+    # exclude the files
     ignore_patterns.append(output_file)
     ignore_patterns.extend(DEFAULT_IGNORES)
     ignore_patterns.extend(user_ignores)
@@ -56,14 +55,13 @@ def main():
     parser = argparse.ArgumentParser(description="Collect context from a code repository")
     parser.add_argument("-p", "--path", default=".", help="Path to the repository")
     parser.add_argument("-o", "--output", help="Output file name, default: project_name.txt")
-    parser.add_argument("-i", "--include", nargs="*", default=[], help="include files")
-    parser.add_argument("-e", "--exclude", nargs="*", default=[], help="ignore files")
+    parser.add_argument("-e", "--exclude", nargs="*", default=[], help="exclude files")
     args = parser.parse_args()
 
     if not args.output:
         args.output = get_project_name(args.path) + ".txt"
 
-    collect_context(args.path, args.output, args.includes, args.exclude)
+    collect_context(args.path, args.output, args.exclude)
 
 
 if __name__ == '__main__':

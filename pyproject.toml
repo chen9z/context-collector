@@ -2,7 +2,7 @@
 name = "context-collector"
 version = "0.1.0"
 description = "Collect context for llm chat"
-authors = ["chen"]
+authors = ["chen9z"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
