@@ -1,8 +1,8 @@
-### Context Collector
+# Context Collector
 
 Context Collector is a Python tool designed to gather context information from code repositories. It traverses specified directories, reads file contents, and consolidates them into a single output file, facilitating potential use with Large Language Models (LLMs) for chat applications.
 
-#### Features
+## Features
 - Traverses specified directories and subdirectories
 - Reads file contents and consolidates them into a single output file
 - Supports .gitignore rules
@@ -11,13 +11,13 @@ Context Collector is a Python tool designed to gather context information from c
 - Flexible command-line parameter configuration
 
 
-#### Installation
+## Installation
 
 - Ensure you have Python 3.10 or higher installed on your system.
 - Clone this repository:
 - cd <project_name> && poetry install
 
-#### Usage
+## Usage
 
 ```shell
 contc -p /path/to/your/project -o output.txt
