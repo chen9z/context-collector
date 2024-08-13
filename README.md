@@ -13,9 +13,9 @@ Context Collector is a Python tool designed to gather context information from c
 
 ## Installation
 
-- Ensure you have Python 3.10 or higher installed on your system.
-- Clone this repository:
-- cd <project_name> && poetry install
+```shell
+pip install context-collector
+```
 
 ## Usage
 
